@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
         "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": false,
         "lib": [
             "dom",
             "es5",

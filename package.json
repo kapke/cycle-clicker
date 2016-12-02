@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/app/app.ts",
   "scripts": {
-    "serve": "webpack-dev-server --content-base ./src --history-api-fallback"
+    "serve": "webpack-dev-server --content-base ./src --history-api-fallback",
+    "lint": "tslint --project ./"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +18,8 @@
   },
   "devDependencies": {
     "ts-loader": "^1.2.2",
+    "tslint": "^4.0.2",
+    "tslint-loader": "^3.2.1",
     "typescript": "^2.0.10",
     "webpack": "2.1.0-beta.27",
     "webpack-dev-server": "2.1.0-beta.11"

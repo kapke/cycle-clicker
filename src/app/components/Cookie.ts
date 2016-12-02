@@ -19,8 +19,8 @@ export function CookieComponent (sources: SourceWithDOM & SourceWithState) {
 
     return {
         DOM: sources.state.map(renderCookie),
-        clickedCookies: clickedCookies$
-    }
+        clickedCookies: clickedCookies$,
+    };
 }
 
 export function Cookie (sources: SourceWithDOM & SourceWithState) {
