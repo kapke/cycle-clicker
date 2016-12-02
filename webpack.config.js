@@ -1,7 +1,15 @@
 module.exports = {
-    entry: './src/app/app.js',
+    entry: './src/app/app.ts',
     output: {
         filename: 'bundle.js'
     },
-    devtool: 'source-maps'
+    resolve: {
+        extensions: ['.ts', '.js']
+    },
+    module: {
+        rules: [
+            {test: /\.ts$/, loader: 'ts-loader', exclude: /node_modules/},
+        ]
+    },
+    devtool: 'source-maps',
 };
