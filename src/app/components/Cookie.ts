@@ -1,9 +1,9 @@
 import { div, img, span, VNode } from '@cycle/dom';
 import isolate from '@cycle/isolate';
 
-import { SourceWithDOM } from './declarations';
-import {cookieClick} from "./reducers";
-import {SourceWithState, State} from "./State";
+import { SourceWithDOM } from '../declarations';
+import {cookieClick} from "../reducers";
+import {SourceWithState, State} from "../State";
 
 
 export function CookieComponent (sources: SourceWithDOM & SourceWithState) {
