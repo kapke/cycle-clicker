@@ -4,7 +4,6 @@
         "member-ordering": [true, "static-before-instance", "public-before-private", "variables-before-functions"],
         "no-internal-module": true,
         "no-namespace": [true, "allow-declarations"],
-        "no-var-requires": true,
         "no-reference": true,
         "typedef": [true, "parameter", "property-declaration", "member-variable-declaration"],
         "typedef-whitespace": [
@@ -52,7 +51,6 @@
         "max-line-length": [true, 140],
         "no-default-export": true,
         "no-mergeable-namespace": true,
-        "no-require-imports": true,
         "no-trailing-whitespace": true,
         "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
         "align": [true, "parameters", "statements"],
@@ -66,7 +64,7 @@
         "one-variable-per-declaration": true,
         "ordered-imports": true,
         "semicolon": [true, "always"],
-        "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"],
+        "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case", "allow-leading-underscore"],
         "whitespace": [
             true,
             "check-branch",

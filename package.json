@@ -17,6 +17,11 @@
     "xstream": "^9.0.0"
   },
   "devDependencies": {
+    "@types/node": "^0.0.2",
+    "css-loader": "^0.26.1",
+    "node-sass": "^3.13.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
     "ts-loader": "^1.2.2",
     "tslint": "^4.0.2",
     "tslint-loader": "^3.2.1",

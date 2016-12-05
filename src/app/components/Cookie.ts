@@ -5,13 +5,16 @@ import {Component} from "../helpers";
 import {cookieClick} from "../reducers";
 import {SourceWithState, State} from "../State";
 
+const {cookie} = require('./Cookie.scss');
+const _cookie = `.${cookie}`;
+
 
 export function CookieComponent (sources: SourceWithDOM & SourceWithState) {
-    const cookieClicks$ = sources.DOM.select('.cookie').events('click');
+    const cookieClicks$ = sources.DOM.select(_cookie).events('click');
     const clickedCookies$ = cookieClicks$.map(() => cookieClick);
 
     function renderCookie (state: State): VNode {
-        return div('.cookie', [
+        return div(_cookie, [
             img({props: {src: 'img/cookie.png'}}),
             span(state.cookiesCount.toString()),
         ]);
