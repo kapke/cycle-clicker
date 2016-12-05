@@ -5,7 +5,7 @@ import {Component} from "../helpers";
 import {cookieClick} from "../reducers";
 import {SourceWithState, State} from "../State";
 
-const {cookie} = require('./Cookie.scss');
+const {cookie} = require('./../styles/styles.scss');
 const _cookie = `.${cookie}`;
 
 

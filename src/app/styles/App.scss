@@ -1,0 +1,16 @@
+@import "Cookie";
+@import "Shop";
+
+.app {
+    font-family: "Comic Sans MS";
+    font-size: 16px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+
+    .cookie, .shop {
+        flex-grow: 1;
+        width: 50%;
+        margin: 1rem;
+    }
+}

@@ -13,3 +13,11 @@ export function Component<TSources, TSinks> (component: ComponentFunction<TSourc
         return isolate(component)(sources);
     };
 }
+
+export function replaceItem<T> (arr: T[], newItem: T, index: number): T[] {
+    return arr.map((elem, i) => i == index ? newItem : elem);
+}
+
+export function sum (a: number, b: number): number {
+    return a + b;
+}

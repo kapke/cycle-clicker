@@ -3,24 +3,33 @@ import {Observable} from "rxjs";
 
 import {SourceWithDOM} from "../declarations";
 import {Component} from "../helpers";
-import {SourceWithState, State} from "../State";
+import {produceCookies} from "../reducers";
+import {SourceWithState} from "../State";
 import {Cookie} from "./Cookie";
+import {Shop} from "./Shop";
+
+const { app } = require("./../styles/styles.scss");
 
 
-function renderApp (state: State, cookie: VNode): VNode {
-    return div([
+function renderApp (cookie: VNode, shop: VNode): VNode {
+    return div(`.${app}`, [
         cookie,
-        div('.cursor', 'cursor 1/s 5'),
+        shop,
     ]);
 }
 
 export function AppComponent (sources: SourceWithState & SourceWithDOM) {
     const cookie = Cookie(sources);
+    const shop = Shop(sources);
 
-    const stateChanges$ = cookie.clickedCookies;
+    const stateChanges$ = Observable.merge(
+        cookie.clickedCookies,
+        shop.itemBoughts,
+        Observable.interval(1000).map(() => produceCookies),
+    );
 
-    const dom$ = Observable.combineLatest(sources.state, cookie.DOM)
-        .map(([state, cookieDOM]) => renderApp(state, cookieDOM));
+    const dom$ = Observable.combineLatest(cookie.DOM, shop.DOM)
+        .map(([cookieDOM, shopDOM]) => renderApp(cookieDOM, shopDOM));
 
     return {
         DOM: dom$,
