@@ -1,0 +1,61 @@
+.shop {
+    color: black;
+}
+
+.item {
+    $gutter: 0.5rem;
+
+    height: 5rem;
+    position: relative;
+    overflow: hidden;
+
+    .count {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.7;
+    }
+
+    .name {
+        position: relative;
+        left: 5rem;
+    }
+
+    .cost, .production {
+        position: absolute;
+        right: $gutter;
+    }
+
+    .cost {
+        top: $gutter;
+
+        &::before {
+            content: '	🍪'; //It's cookie there :)
+        }
+    }
+
+    .production {
+        bottom: $gutter;
+
+        &::after {
+            content: '	🍪/s'
+        }
+    }
+}
+
+.name {
+    font-size: 3rem;
+}
+
+.cost {
+    font-size: 1.5rem;
+}
+
+.production {
+    font-size: 1.5rem;
+}
+
+.count {
+    font-size: 5rem;
+}
